@@ -18,7 +18,7 @@ resource "aws_db_instance" "default" {
 resource "aws_db_subnet_group" "my_db_subnet" {
   name = "my_db_subnet_group"
   subnet_ids = [
-    var.subnet_id,
+    aws_subnet.subnet_1.id,
     aws_subnet.subnet_2.id
     ]
 

@@ -11,7 +11,6 @@ resource "aws_db_instance" "default" {
   skip_final_snapshot = true
   port = var.database_port
   identifier = "mydb"
-  publicly_accessible = true
   vpc_security_group_ids = [aws_security_group.allow_custom_tcp.id]
   db_subnet_group_name   = aws_db_subnet_group.my_db_subnet.name
 }

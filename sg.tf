@@ -2,7 +2,7 @@
 
 resource "aws_security_group" "docker" {
   name_prefix = "docker-${var.name}"
-  vpc_id      = var.vpc_id
+  vpc_id      = aws_vpc.skyshop_vpc.id
   ingress {
     protocol    = "tcp"
     from_port   = 22
@@ -53,7 +53,7 @@ resource "aws_security_group" "docker" {
 resource "aws_security_group" "allow_custom_tcp" {
   name = "allow_custom_tcp"
   description = "Allow Custom TCP traffic"
-  vpc_id = var.vpc_id
+  vpc_id = aws_vpc.skyshop_vpc.id
 
   ingress {
     from_port = var.database_port

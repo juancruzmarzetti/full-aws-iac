@@ -10,7 +10,7 @@ data "aws_ami" "amazon-linux-2" {
 resource "aws_instance" "docker" {
   ami                         = data.aws_ami.amazon-linux-2.id
   instance_type               = "t2.micro"
-  subnet_id                   = var.subnet_id
+  subnet_id                   = aws_subnet.subnet_1.id
   key_name                    = var.keyname
   vpc_security_group_ids      = [aws_security_group.docker.id]
   associate_public_ip_address = true

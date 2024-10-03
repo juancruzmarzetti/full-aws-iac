@@ -38,6 +38,13 @@ resource "aws_security_group" "docker" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  ingress {
+    protocol    = "tcp"
+    from_port   = 3306
+    to_port     = 3306
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   egress {
     protocol    = -1
     from_port   = 0

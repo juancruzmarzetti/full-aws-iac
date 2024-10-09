@@ -23,7 +23,7 @@ resource "aws_instance" "docker" {
     inline = [
       "sudo yum update -y",
       "sudo amazon-linux-extras install docker -y",
-      "sudo yum install docker conntrack git -y",
+      "sudo yum install docker conntrack git mysql -y",
       "sudo service docker start",
       "sudo usermod -a -G docker ec2-user",
       "sudo chown ec2-user:docker /var/run/docker.sock",

@@ -5,6 +5,25 @@ $0.005 per In-use public IPv4 address per hour". Me parece que el gasto se debe 
 - [Back-End de esta Infraestructura](https://github.com/juancruzmarzetti/java-spring-iac-aws)
 - [Front-End de esta infraestructura](https://github.com/juancruzmarzetti/react-vite-iac-aws)
 
+### ♻ Infraestructura reutilizable
+# AWS IaC con Terraform
+
+## Instrucciones para reutilización de IaC:
+
+### Variables de Entorno de Gitlab:
+
+- #### Heredadas del grupo de repositorios:
+  - **`JUANKEYS`**: valor de nuestras llaves .pem. 
+  - **`CI_REGISTRY_USER`**: nuestro nombre de usuario de Docker Hub.
+  - **`CI_REGISTRY_PASSWORD`**: nuestra contraseña de Docker Hub.
+  - **`CI_REGISTRY`**: "docker.io" como valor, sin comillas. 
+  - **`AWS_SECRET_ACCESS_KEY`**: nuestra llave de acceso secreta de AWS.
+  - **`AWS_ACCESS_KEY_ID`**: nuestro id de llave de acceso de AWS.
+
+- #### De este repositorio específico:
+  - **`TF_API_TOKEN`**: Token de acceso personal; ir a User Settings > Access Tokens > Generar un token con permisos "api" y "read_repository" (copiar el token, ya que solo se muestra una vez). Ese token será el valor de esta variable.
+
+  Esta IaC se complementa con el Back-End de [este repositorio](https://github.com/juancruzmarzetti/java-spring-iac-aws) y tambíen con el Front-End de [este otro repositorio](https://github.com/juancruzmarzetti/react-vite-iac-aws)
 ---
 
 ### English
@@ -13,3 +32,23 @@ $0.005 per In-use public IPv4 address per hour". It seems to me that the expense
 
 - [Back-End of this Infrastructure](https://github.com/juancruzmarzetti/java-spring-iac-aws)
 - [Front-End of this Infrastricture](https://github.com/juancruzmarzetti/react-vite-iac-aws)
+
+### ♻ Reusable Infrastructure
+# AWS IaC with Terraform
+
+## Instructions for Reusing IaC:
+
+### GitLab Environment Variables:
+
+- #### Inherited from the repository group:
+  - **`JUANKEYS`**: value of our .pem keys.
+  - **`CI_REGISTRY_USER`**: our Docker Hub username.
+  - **`CI_REGISTRY_PASSWORD`**: our Docker Hub password.
+  - **`CI_REGISTRY`**: "docker.io" as the value, without quotes.
+  - **`AWS_SECRET_ACCESS_KEY`**: our AWS secret access key.
+  - **`AWS_ACCESS_KEY_ID`**: our AWS access key ID.
+
+- #### For this specific repository:
+  - **`TF_API_TOKEN`**: Personal access token; go to User Settings > Access Tokens > Generate a token with "api" and "read_repository" permissions (copy the token as it’s shown only once). This token will be the value for this variable.
+
+  This IaC is complemented by the Back-End in [this repository](https://github.com/juancruzmarzetti/java-spring-iac-aws) and also by the Front-End in [this other repository](https://github.com/juancruzmarzetti/react-vite-iac-aws).
